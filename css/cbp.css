@@ -13,6 +13,7 @@
 - Forms Overrides
 - Custom Components
 - Utilities
+- Dark Mode
 */
 
 
@@ -28,6 +29,11 @@
   --cbp-dark-grey: #333333;
   --cbp-white: #FFFFFF;
   --cbp-black: #000000;
+
+  /* Dark Mode Palette */
+  --cbp-dark-bg: #1e1e1e;
+  --cbp-dark-surface: #333333;
+  --cbp-dark-text: #f0f0f0;
 }
 
 
@@ -107,8 +113,8 @@ input[type="button"].button-primary {
 .button.button-primary:hover,
 button.button-primary:hover,
 input[type="submit"].button-primary:hover,
-input[type="reset"].button-primary:hover,
-input[type="button"].button-primary:hover {
+input[type="reset"].button-primary:hover, /* Suggestion: Add a distinct hover effect */
+input[type="button"].button-primary:hover { /* Currently hovers to the default button color */
   background-color: var(--cbp-secondary-blue);
   border-color: var(--cbp-secondary-blue);
 }
@@ -251,4 +257,251 @@ legend {
 /* Add any CBP-specific utility classes here */
 .cbp-text-center {
   text-align: center;
+}
+
+
+/* Dark Mode
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+body.dark-mode {
+  background-color: var(--cbp-dark-bg);
+  color: var(--cbp-dark-text);
+}
+
+/* Dark Mode Headers & Links */
+body.dark-mode h1,
+body.dark-mode h2,
+body.dark-mode h3,
+body.dark-mode h4,
+body.dark-mode h5,
+body.dark-mode h6 {
+  color: var(--cbp-secondary-blue);
+}
+
+body.dark-mode a {
+  color: #66b3ff; /* Lighter blue for readability on dark background */
+}
+body.dark-mode a:hover {
+  color: var(--cbp-light-grey);
+}
+
+/* Dark Mode Header */
+body.dark-mode .cbp-header {
+  background-color: var(--cbp-dark-surface);
+  box-shadow: 0 2px 4px rgba(0,0,0,0.4);
+}
+
+/* Dark Mode Buttons */
+body.dark-mode .button,
+body.dark-mode button,
+body.dark-mode input[type="submit"],
+body.dark-mode input[type="reset"],
+body.dark-mode input[type="button"] {
+  background-color: var(--cbp-secondary-blue);
+  border-color: var(--cbp-secondary-blue);
+  color: var(--cbp-white);
+}
+
+body.dark-mode .button:hover,
+body.dark-mode button:hover,
+body.dark-mode input[type="submit"]:hover,
+body.dark-mode input[type="reset"]:hover,
+body.dark-mode input[type="button"]:hover {
+  background-color: #0079c1; /* Slightly lighter blue for hover */
+  border-color: #0079c1;
+}
+
+body.dark-mode .button.button-primary,
+body.dark-mode button.button-primary,
+body.dark-mode input[type="submit"].button-primary,
+body.dark-mode input[type="reset"].button-primary,
+body.dark-mode input[type="button"].button-primary {
+  background-color: var(--cbp-primary-blue);
+  border-color: var(--cbp-primary-blue);
+}
+
+body.dark-mode .button.button-primary:hover,
+body.dark-mode button.button-primary:hover,
+body.dark-mode input[type="submit"].button-primary:hover,
+body.dark-mode input[type="reset"].button-primary:hover,
+body.dark-mode input[type="button"].button-primary:hover {
+  background-color: var(--cbp-secondary-blue);
+  border-color: var(--cbp-secondary-blue);
+}
+
+/* Dark Mode Forms */
+body.dark-mode input[type="email"],
+body.dark-mode input[type="number"],
+body.dark-mode input[type="search"],
+body.dark-mode input[type="text"],
+body.dark-mode input[type="tel"],
+body.dark-mode input[type="url"],
+body.dark-mode input[type="password"],
+body.dark-mode input[type="date"],
+body.dark-mode input[type="month"],
+body.dark-mode textarea,
+body.dark-mode select {
+  background-color: var(--cbp-dark-surface);
+  border-color: #555;
+  color: var(--cbp-dark-text);
+}
+
+body.dark-mode input[type="email"]:focus,
+body.dark-mode input[type="number"]:focus,
+body.dark-mode input[type="search"]:focus,
+body.dark-mode input[type="text"]:focus,
+body.dark-mode input[type="tel"]:focus,
+body.dark-mode input[type="url"]:focus,
+body.dark-mode input[type="password"]:focus,
+body.dark-mode input[type="date"]:focus,
+body.dark-mode input[type="month"]:focus,
+body.dark-mode textarea:focus,
+body.dark-mode select:focus {
+  border-color: var(--cbp-secondary-blue);
+  outline-color: var(--cbp-secondary-blue);
+}
+
+body.dark-mode label,
+body.dark-mode legend {
+  color: var(--cbp-dark-text);
+}
+
+/* Dark Mode Custom Components */
+body.dark-mode .cbp-card {
+  background-color: var(--cbp-dark-surface);
+  border-color: #444;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+
+/* Bubbles (Type and Status)
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+.cbp-bubble { /* Combined .type-bubble and .status-bubble */
+  display: inline-block;
+  padding: 4px 10px;
+  border-radius: 999px;
+  font-size: 0.85em;
+  font-weight: 500;
+  margin: 4px 0;
+  border: 1px solid transparent;
+  background-color: rgba(0,0,0,0.05);
+}
+
+/* Status Bubbles */
+.status-ready-for-release {
+  border-color: dodgerblue;
+  background-color: rgba(30,144,255,0.1);
+  color: dodgerblue;
+}
+.status-pending-final-vetting {
+  border-color: mediumseagreen;
+  background-color: rgba(60,179,113,0.1);
+  color: mediumseagreen;
+}
+.status-metadata-complete {
+  border-color: gold;
+  background-color: rgba(255,215,0,0.1);
+  color: rgb(112, 114, 0);
+}
+.status-metadata-incomplete {
+  border-color: rgb(224, 146, 0);
+  background-color: rgba(255,165,0,0.1);
+  color: rgb(184, 104, 0);
+}
+
+/* Dark Mode Status Bubbles */
+body.dark-mode .status-ready-for-release {
+  background-color: rgba(30,144,255,0.2);
+  color: #66b3ff;
+}
+body.dark-mode .status-pending-final-vetting {
+  background-color: rgba(60,179,113,0.2);
+  color: #66ffcc;
+}
+body.dark-mode .status-metadata-complete {
+  background-color: rgba(255,215,0,0.2);
+  color: #ffd700;
+}
+body.dark-mode .status-metadata-incomplete {
+  background-color: rgba(255,165,0,0.2);
+  color: #ffb84d;
+}
+
+
+/* Toast Notifications
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+#toast-container {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 9999;
+  max-width: 300px;
+  pointer-events: none;
+}
+
+.toast {
+  display: flex;
+  align-items: center;
+  background-color: #323232;
+  color: white;
+  padding: 12px 16px;
+  margin-top: 8px;
+  border-radius: 6px;
+  font-size: 1.4rem; /* Adjusted to rem */
+  opacity: 0;
+  transform: translateX(100%);
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.toast.show {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.toast.success { background-color: #4caf50; }   /* Green */
+.toast.warning { background-color: #ff9800; }   /* Orange */
+.toast.error   { background-color: #f44336; }   /* Red */
+
+
+/* Tables
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+/* Skeleton provides base table styles. We can add dark mode overrides. */
+body.dark-mode table {
+  border-bottom-color: #444;
+}
+
+body.dark-mode th,
+body.dark-mode td {
+  border-bottom-color: #444;
+}
+
+
+/* Misc Utilities
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+/* Copy Button */
+.button.copy-button { /* Make it a modifier for the .button class */
+  background-color: #f0f0f0;
+  color: #333;
+  border: 1px solid #ccc;
+  padding: 2px 6px;
+  font-size: 1.2rem; /* Adjusted to rem */
+  margin-left: 4px;
+  height: auto; /* Override default button height */
+  line-height: normal; /* Override default button line-height */
+}
+
+.button.copy-button:hover {
+  background-color: #333;
+  color: #fff;
+  border-color: #333;
+}
+
+body.dark-mode .copy-button {
+  background-color: #444;
+  color: #eee;
+  border: 1px solid #666;
+}
+
+body.dark-mode .button.copy-button:hover {
+  background-color: #ddd;
+  color: #111;
 }
