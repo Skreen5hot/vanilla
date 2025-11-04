@@ -1,0 +1,254 @@
+/*
+ * CBP.css
+ * Custom styles for the CBP Style Guide, layered on top of Skeleton.css
+ */
+
+/* Table of contents
+––––––––––––––––––––––––––––––––––––––––––––––––––
+- Colors (CBP Palette)
+- Base Styles & Typography Overrides
+- Links Overrides
+- Buttons Overrides
+- Navigation (CBP Application Header)
+- Forms Overrides
+- Custom Components
+- Utilities
+*/
+
+
+/* Colors (CBP Palette)
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+/* Define CBP's core color palette as CSS variables for easy reuse */
+:root {
+  --cbp-primary-blue: #002D62;
+  --cbp-secondary-blue: #005EA7;
+  --cbp-accent-green: #2E8540;
+  --cbp-light-grey: #F0F0F0;
+  --cbp-medium-grey: #A9A9A9;
+  --cbp-dark-grey: #333333;
+  --cbp-white: #FFFFFF;
+  --cbp-black: #000000;
+}
+
+
+/* Base Styles & Typography Overrides
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+/*
+ * Skeleton uses "Raleway". We override it with a more standard sans-serif font.
+ * The CBP style guide recommends "Source Sans Pro".
+ */
+body {
+  font-family: "Source Sans Pro", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  color: var(--cbp-dark-grey);
+}
+
+/* Headings - Adjust colors, weights, and margins to match CBP style */
+h1, h2, h3, h4, h5, h6 {
+  color: var(--cbp-primary-blue);
+  font-weight: 600; /* Bolder than Skeleton's default 300 */
+  font-family: "Source Sans Pro", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+
+/* Links Overrides
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+a {
+  color: var(--cbp-secondary-blue);
+  text-decoration: underline; /* Add underline for better accessibility */
+}
+a:hover {
+  color: var(--cbp-primary-blue);
+}
+
+
+/* Buttons Overrides
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+/*
+ * Override Skeleton's default transparent button and its primary button.
+ * CBP style favors solid, accessible buttons.
+ */
+.button,
+button,
+input[type="submit"],
+input[type="reset"],
+input[type="button"] {
+  background-color: var(--cbp-secondary-blue);
+  color: var(--cbp-white);
+  border: 1px solid var(--cbp-secondary-blue);
+  border-radius: 4px; /* Soften the edges slightly */
+  font-weight: 700;
+  text-transform: none; /* CBP style typically uses sentence case */
+  padding: 0 20px;
+  height: 44px; /* Taller buttons for better touch targets */
+  line-height: 44px;
+  font-size: 1.6rem; /* Larger font size */
+}
+
+.button:hover,
+button:hover,
+input[type="submit"]:hover,
+input[type="reset"]:hover,
+input[type="button"]:hover {
+  background-color: var(--cbp-primary-blue);
+  border-color: var(--cbp-primary-blue);
+  color: var(--cbp-white);
+}
+
+/* Primary button is now the same as the default, but we keep the class for semantics */
+.button.button-primary,
+button.button-primary,
+input[type="submit"].button-primary,
+input[type="reset"].button-primary,
+input[type="button"].button-primary {
+  background-color: var(--cbp-primary-blue);
+  border-color: var(--cbp-primary-blue);
+}
+
+.button.button-primary:hover,
+button.button-primary:hover,
+input[type="submit"].button-primary:hover,
+input[type="reset"].button-primary:hover,
+input[type="button"].button-primary:hover {
+  background-color: var(--cbp-secondary-blue);
+  border-color: var(--cbp-secondary-blue);
+}
+
+/* Disabled buttons */
+.button:disabled,
+button:disabled,
+.button.button-primary:disabled,
+button.button-primary:disabled {
+  background-color: var(--cbp-light-grey);
+  border-color: var(--cbp-medium-grey);
+  color: #888; /* Keep this color from skeleton for disabled text */
+}
+
+
+/* Navigation (CBP Application Header)
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+.cbp-header {
+  background-color: var(--cbp-primary-blue);
+  color: var(--cbp-white);
+  width: 100%;
+  padding: 1.5rem 0; /* Increased vertical padding for a taller header, matching guide's visual */
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.cbp-header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center; /* Vertically center logo and navigation */
+  width: 100%;
+}
+
+.cbp-header-logo {
+  color: var(--cbp-white);
+  font-size: 2.8rem; /* Larger font size for the main logo/site title */
+  font-weight: 700;
+  text-decoration: none;
+  line-height: 1; /* Ensures text doesn't add extra height to the logo area */
+}
+.cbp-header-logo:hover {
+  color: var(--cbp-light-grey); /* Slight color change on hover */
+  text-decoration: none;
+}
+
+.cbp-header-nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0; /* Remove default padding */
+  display: flex;
+  align-items: center; /* Ensure nav items are vertically aligned */
+}
+
+.cbp-header-nav li {
+  margin: 0 0 0 3rem; /* Increased spacing between nav items for clarity */
+}
+
+.cbp-header-nav a {
+  color: var(--cbp-white);
+  text-decoration: none;
+  font-size: 1.7rem; /* Slightly larger font for navigation links */
+  font-weight: 600;
+  padding: 0.5rem 0; /* Add vertical padding to increase clickable area */
+  display: block; /* Required for vertical padding to work */
+}
+.cbp-header-nav a:hover {
+  text-decoration: underline;
+  color: var(--cbp-light-grey); /* Consistent hover color */
+}
+
+
+/* Forms Overrides
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+input[type="email"],
+input[type="number"],
+input[type="search"],
+input[type="text"],
+input[type="tel"],
+input[type="url"],
+input[type="password"],
+input[type="date"],
+input[type="month"],
+textarea,
+select {
+  border: 1px solid var(--cbp-medium-grey);
+  border-radius: 4px; /* Consistent with buttons */
+  box-shadow: none;
+  height: 44px; /* Taller inputs for consistency */
+  padding: 8px 12px;
+}
+
+input[type="email"]:focus,
+input[type="number"]:focus,
+input[type="search"]:focus,
+input[type="text"]:focus,
+input[type="tel"]:focus,
+input[type="url"]:focus,
+input[type="password"]:focus,
+input[type="date"]:focus,
+input[type="month"]:focus,
+textarea:focus,
+select:focus {
+  border-color: var(--cbp-secondary-blue);
+  outline: 3px solid var(--cbp-secondary-blue); /* Clearer focus indicator */
+  outline-offset: 0;
+}
+
+label,
+legend {
+  color: var(--cbp-dark-grey);
+  font-weight: 700; /* Bolder labels */
+  margin-bottom: .8rem;
+}
+
+
+/* Custom Components
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+/* Example: A CBP Alert Box */
+.cbp-alert {
+  background-color: #F0F8FF; /* Light blue background */
+  border: 1px solid #B0D8F7; /* Blue border */
+  color: var(--cbp-primary-blue);
+  padding: 15px 20px;
+  margin-bottom: 2.5rem;
+  border-radius: 4px;
+}
+
+/* Example: CBP Card */
+.cbp-card {
+  background-color: var(--cbp-white);
+  border: 1px solid var(--cbp-light-grey);
+  border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+  padding: 2.5rem;
+  margin-bottom: 2.5rem;
+}
+
+
+/* Utilities
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+/* Add any CBP-specific utility classes here */
+.cbp-text-center {
+  text-align: center;
+}

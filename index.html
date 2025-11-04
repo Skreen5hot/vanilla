@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CBP Style Guide on Skeleton</title>
+
+  <!-- CSS
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link rel="stylesheet" href="css/normalize.min.css">
+  <link rel="stylesheet" href="css/skeleton.css">
+  <link rel="stylesheet" href="css/cbp.css">
+
+  <!-- Favicon
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link rel="icon" type="image/png" href="images/favicon.png">
+
+</head>
+<body>
+
+  <header class="cbp-header">
+    <div class="container">
+      <div class="row">
+        <div class="twelve columns cbp-header-container">
+          <a href="#" class="cbp-header-logo">CBP Project</a>
+          <nav class="cbp-header-nav" aria-label="Main navigation">
+            <ul>
+              <li><a href="#">Home</a></li>
+              <li><a href="#">About</a></li>
+              <li><a href="#">Services</a></li>
+              <li><a href="#">Contact</a></li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Primary Page Layout
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <div class="container">
+    <section class="row" style="margin-top: 4rem; margin-bottom: 2rem;">
+      <div class="twelve columns">
+        <h1>CBP Style Guide on Skeleton</h1>
+        <p>This page demonstrates custom CBP styles layered on top of the Skeleton CSS framework.</p>
+      </div>
+    </section>
+
+    <main>
+      <!-- Typography -->
+      <div class="row">
+        <div class="twelve columns">
+          <h2>Typography</h2>
+          <h1>Heading 1</h1>
+          <h2>Heading 2</h2>
+          <h3>Heading 3</h3>
+          <h4>Heading 4</h4>
+          <h5>Heading 5</h5>
+          <h6>Heading 6</h6>
+          <p>This is a paragraph of text. It is used to demonstrate the body copy styling. You can see that the font is different from the default Skeleton font. This paragraph also contains a <a href="#">hyperlink</a> to show the custom link color.</p>
+        </div>
+      </div>
+
+      <!-- Buttons -->
+      <div class="row">
+        <div class="twelve columns">
+          <h2>Buttons</h2>
+          <button>Default Button</button>
+          <button class="button-primary">Primary Button</button>
+          <button disabled>Disabled Button</button>
+        </div>
+      </div>
+
+      <!-- Forms -->
+      <div class="row">
+        <div class="twelve columns">
+          <h2>Forms</h2>
+          <form>
+            <div class="row">
+              <div class="six columns">
+                <label for="exampleEmailInput">Your email</label>
+                <input class="u-full-width" type="email" placeholder="test@mailbox.com" id="exampleEmailInput">
+              </div>
+              <div class="six columns">
+                <label for="exampleRecipientInput">Reason for contacting</label>
+                <select class="u-full-width" id="exampleRecipientInput">
+                  <option value="Option 1">Questions</option>
+                  <option value="Option 2">Admiration</option>
+                  <option value="Option 3">Can I get an autograph?</option>
+                </select>
+              </div>
+            </div>
+            <label for="exampleMessage">Message</label>
+            <textarea class="u-full-width" placeholder="Hi Dave …" id="exampleMessage"></textarea>
+            <label>
+              <input type="checkbox">
+              <span class="label-body">Send a copy to yourself</span>
+            </label>
+            <input class="button-primary" type="submit" value="Submit">
+          </form>
+        </div>
+      </div>
+
+      <!-- Lists -->
+      <div class="row">
+        <div class="six columns">
+          <h2>Unordered List</h2>
+          <ul>
+            <li>Item 1</li>
+            <li>Item 2</li>
+            <li>Item 3</li>
+          </ul>
+        </div>
+        <div class="six columns">
+          <h2>Ordered List</h2>
+          <ol>
+            <li>Item 1</li>
+            <li>Item 2</li>
+            <li>Item 3</li>
+          </ol>
+        </div>
+      </div>
+
+      <!-- Custom Components -->
+      <div class="row">
+        <div class="twelve columns">
+          <h2>Custom Components</h2>
+          <div class="cbp-alert">
+            <strong>Heads up!</strong> This is a custom alert box component.
+          </div>
+          <div class="cbp-card">
+            <h4>Card Title</h4>
+            <p>This is a custom card component. It's useful for grouping related content in a visually distinct block.</p>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+
+</body>
+</html>
