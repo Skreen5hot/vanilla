@@ -495,16 +495,16 @@ html.dark-mode td {
 
 /* Misc Utilities
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
-/* Copy Button */
-.button.copy-button { /* Make it a modifier for the .button class */
+/* Copy Button - Modifier for the base .button class */
+.button.copy-button {
   background-color: #f0f0f0;
   color: #333;
   border: 1px solid #ccc;
   padding: 2px 6px;
   font-size: 1.2rem; /* Adjusted to rem */
   margin-left: 4px;
-  height: auto; /* Override default button height */
-  line-height: normal; /* Override default button line-height */
+  height: auto;      /* Override default button height */
+  line-height: 1.5;  /* Override default button line-height */
 }
 
 .button.copy-button:hover {
@@ -519,8 +519,9 @@ html.dark-mode .copy-button {
   border: 1px solid #666;
 }
 
-body.dark-mode .button.copy-button:hover {
+html.dark-mode .button.copy-button:hover {
   background-color: #ddd;
+  color: #111;
 }
 
 /* Application-Specific Styles (from style.css)
@@ -544,11 +545,6 @@ html.dark-mode .page-banner {
 .banner-logo {
   height: 150px; /* Adjust as needed */
   width: auto; /* Maintain aspect ratio */
-}
-
-/* Active link */
-a:active {
-  color: rgb(42, 42, 252);
 }
 
 main {
@@ -761,6 +757,42 @@ html.dark-mode .type-generic {
   color: #856404;
 }
 
+/* Blockquotes, Code, and HR
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+/* Overriding Skeleton's defaults for a more integrated look */
+blockquote {
+  border-left: 4px solid var(--cbp-medium-grey);
+  padding: 1rem 2rem;
+  margin-left: 0;
+  margin-right: 0;
+}
+
+hr {
+  border-top: 1px solid var(--cbp-light-grey);
+}
+
+code {
+  background: var(--cbp-light-grey);
+  border: 1px solid #E1E1E1; /* Matching Skeleton's border */
+  padding: .2rem .5rem;
+  border-radius: 4px;
+  font-size: 85%;
+}
+
+pre {
+  background: var(--cbp-light-grey);
+  border: 1px solid #E1E1E1;
+  padding: 1rem 1.5rem;
+  border-radius: 4px;
+}
+
+/* Dark Mode Overrides for these elements */
+html.dark-mode blockquote {
+  border-left-color: var(--cbp-secondary-blue);
+  background-color: var(--cbp-dark-surface);
+  color: var(--cbp-dark-text);
+}
+
 html.dark-mode #alert-message.info {
   background-color: #004d40;
   color: #e0f7fa;
@@ -769,6 +801,17 @@ html.dark-mode #alert-message.info {
 html.dark-mode #alert-message.warning {
   background-color: #8a6d3b;
   color: #fff3cd;
+}
+
+html.dark-mode hr {
+  border-top-color: var(--cbp-dark-surface);
+}
+
+html.dark-mode code,
+html.dark-mode pre {
+  background: var(--cbp-dark-surface);
+  border-color: #555;
+  color: #eee;
 }
 
 /* Table */
