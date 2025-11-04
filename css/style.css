@@ -1,4 +1,4 @@
- :root {
+:root {
   --primary-color: #036; /* DHS/CBP blue */
   --accent-color: #888; /* Gray accents */
   --light-bg: #ffffff;
@@ -30,7 +30,8 @@ body {
   height: 100%;
 }
 
-header {
+/* Styles for the page-specific banner below the main navigation */
+.page-banner {
   background-color: var(--primary-color);
   color: white;
   padding: 10px;
@@ -38,6 +39,10 @@ header {
   align-items: center; /* Vertically aligns items */
   justify-content: center; /* Keeps the title centered */
   gap: 10px; /* Adds spacing between elements */
+}
+
+.dark-mode .page-banner {
+  background-color: var(--button-hover);
 }
 
 .banner-logo {
@@ -52,9 +57,9 @@ a:link, a:visited {
   text-decoration: none;
 }
 
-/* Dark mode link styles */
-body.dark-mode a:link, 
-body.dark-mode a:visited {
+/* Dark mode link styles (applied to html element) */
+html.dark-mode a:link, 
+html.dark-mode a:visited {
   color: #66b3ff;
 }
 
@@ -145,10 +150,6 @@ label {
 .dark-mode {
   background-color: var(--dark-bg);
   color: var(--dark-text);
-}
-
-.dark-mode header {
-  background-color: var(--button-hover);
 }
 
 .dark-mode main {
@@ -396,49 +397,6 @@ body.dark-mode button.copy-button:hover {
 .dark-mode #alert-message.warning {
   background-color: #8a6d3b;
   color: #fff3cd;
-}
-
-/* Nav Menu */
-
-ul {
-  list-style-type: none;
-  background-color: var(--primary-color);
-  color: white;
-  margin: 0;
-  padding: 0;
-  overflow: hidden;
-}
-
-.dark-mode ul {
-  list-style-type: none;
-  color: white;
-  background-color: var(--button-hover);
-  margin: 0;
-  padding: 0;
-  overflow: hidden;
-}
-
-
-li {
-  float: left;
-}
-
-li a:link, a:visited {
-  display: block;
-  text-align: center;
-  text-decoration: none;
-  padding: 12px 18px;
-  border: none;
-  cursor: pointer;
-  transition: background 0.3s ease;
-}
-
-li a:hover {
-  background-color: var(--button-hover) ;
-}
-
-.dark-mode li a:hover {
-  background-color: var(--dark-button-hover)
 }
 
 /* Table */

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="license" content="CC0 1.0 Universal (CC0 1.0) Public Domain Dedication">
+    <meta name="license-url" content="https://github.com/US-CBP/open-source-policy?tab=License-1-ov-file">
+    <meta name="author" content="Jonathan Vajda (CBP)">
+    <meta name="author" content="Aaron Damiano (CBP)">
+    <title>CBP Ontology Lookup Tool</title>
+    <link rel="icon" href="images/fav-icon-alt-100.png">
+    <meta name="version" content="1.0.1">
+    <meta name="date-modified" content="2025-10-29">
+  
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="CBP Ontology Lookup Tool">
+    <meta property="og:description"
+      content="A tool to search ontology classes and object properties accross ontolgoy files.">
+    <meta property="og:image"
+      content="https://pages-maestro.dhs.gov/cbp-ontology-lookup-tool-52f957/images/fav-icon-alt0128.png">
+    <meta property="og:url" content="https://pages-maestro.dhs.gov/cbp-ontology-lookup-tool-52f957/index.html">
+
+    <link rel="stylesheet" href="css/normalize.min.css">
+    <link rel="stylesheet" href="css/skeleton.css">
+    <link rel="stylesheet" href="css/cbp.css">
+
+
+</head>
+<body data-page="default">
+  <div id="header-placeholder"></div>
+    <main>
+        <input type="text" id="search-bar" placeholder="Search terms..."><button id="search-button" style="float: right;">Search</button>
+        <details>
+          <summary>Advanced options</summary>
+          <table width="100%">
+            <tr>
+              <td><input type="checkbox" id="exact-match"><label for="exact-match">Exact Match</label></td>
+              <td><input type="checkbox" id="case-sensitive"><label for="case-sensitive">Case sensitive</label></td>
+              <td><input type="checkbox" id="wild-card"><label for="wild-card">Wildcard (*)</label></td>
+              <td colspan="2"><button id="download-button" style="float: right; margin-right: 0;" >Save Results</button></td>
+            </tr>
+            <tr>
+              <td><label for="owlTypeFilter">OWL Types:</label></td>
+              <td><select id="owlTypeFilter" multiple size="4">
+                  <option value="ALL" selected>All</option>
+                  <option value="http://www.w3.org/2002/07/owl#Class">Class</option>
+                  <option value="http://www.w3.org/2002/07/owl#NamedIndividual">NamedIndividual</option>
+                  <option value="http://www.w3.org/2002/07/owl#ObjectProperty">ObjectProperty</option>
+                  <option value="http://www.w3.org/2002/07/owl#DatatypeProperty">DatatypeProperty</option>
+                  <option value="http://www.w3.org/2002/07/owl#AnnotationProperty">AnnotationProperty</option>
+                </select></td>
+              <td><label for="namespaceFilter">Namespaces:</label></td>
+              <td colspan="2"><select id="namespaceFilter" multiple size="4">
+                  <option value="ALL" selected>All</option>
+                  <option value="https://dhs.gov/ontology/">Department of Homeland Security</option>
+                  <option value="https://www.commoncoreontologies.org/">Common Core Ontologies 2.x</option>
+                  <option value="http://www.ontologyrepository.com/CommonCoreOntologies/">Common Core Ontologies 1.x</option>
+                  <option value="sdv://">DoD-IC</option>
+                  <option value="http://purl.obolibrary.org/obo/">OBO Library</option>
+                  <option value="OTHER">Other</option>
+                </select></td>
+            </tr>
+          </table>
+        </details>
+        <div id="results"></div>
+    </main>
+     
+<footer>
+  <p>The underlying <a href="data.json">dataset</a> for this search.</a></p>
+  <br />
+  <p style="text-align:right; font-size: 75%; margin: 2em;">2025 Customs and Border Protection. All rights waived under CC0: <a href="https://creativecommons.org/publicdomain/zero/1.0/" target="_blank" rel="noopener noreferrer"> CC0 1.0 Universal (CC0 1.0) Public Domain Dedication</a>.</p>
+</footer>
+
+    
+    <script src="scripts/header.js"></script>
+    <script src="scripts/lookup-script.js"></script>
+    <script src="scripts/data.js"></script>
+</body>
+</html>
