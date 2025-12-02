@@ -1,0 +1,69 @@
+flowchart TD
+
+    A["Is there an armed conflict?  
+    (IHL applies if intensity + organization are met)"]
+
+    B["NO ARMED CONFLICT  
+    → Domestic law applies  
+    → Killing is murder unless self-defense  
+    Authority:  
+    - 18 USC §1111 (Murder)  
+    - UCMJ Art. 118"]
+
+    C["Identify status of person:  
+    - Combatant  
+    - Civilian  
+    - Civilian Directly Participating  
+    - Hors de combat  
+    - Shipwrecked  
+    - Surrendering  
+    - Detained"]
+
+    D["WAR CRIME  
+    Attack on hors de combat / shipwrecked / wounded / surrendered  
+    Authority:  
+    - GC II Art. 12  
+    - Customary IHL Rule 47  
+    - 18 USC §2441"]
+
+    E["WAR CRIME  
+    Attack on civilian not participating  
+    Authority:  
+    - AP I Art. 51  
+    - Customary IHL Rules 1 and 6  
+    - 18 USC §2441"]
+
+    F["Civilian Directly Participating  
+    → Targetable only during participation  
+    Authority:  
+    - ICRC DPH Guidance  
+    - Customary IHL Rule 6  
+    - San Remo Manual 39–41"]
+
+    G["Combatant capable of hostile action  
+    → Lawful target  
+    Authority:  
+    - GC III  
+    - San Remo Manual 40–43  
+    - US Navy NWP 1-14M"]
+
+    H["Status in doubt  
+    → Presume civilian  
+    Authority:  
+    - AP I Art. 50  
+    - Customary IHL Rule 6"]
+
+    %% Connections
+    A -->|"No"| B
+
+    A -->|"Yes"| C
+
+    C -->|"Hors de combat / shipwrecked / surrendering"| D
+
+    C -->|"Civilian not participating"| E
+
+    C -->|"Civilian directly participating"| F
+
+    C -->|"Combatant able to fight"| G
+
+    C -->|"Uncertain status"| H
